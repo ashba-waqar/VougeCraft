@@ -13,6 +13,7 @@ expo-env.d.ts
 .kotlin/
 *.orig.*
 *.jks
+*.keystore
 *.p8
 *.p12
 *.key
@@ -21,21 +22,30 @@ expo-env.d.ts
 # Metro
 .metro-health-check*
 
-# debug
+# debug and logs
 npm-debug.*
 yarn-debug.*
 yarn-error.*
+*.log
 
-# macOS
+# macOS and editors
 .DS_Store
 *.pem
+.idea/
 
-# local env files
-.env*.local
+# environment files (keys live here, never commit)
+.env
+.env.*
+!.env.example
+
+# Supabase CLI local files
+supabase/.temp/
+supabase/.branches/
+supabase/.env
 
 # typescript
 *.tsbuildinfo
 
-# generated native folders
+# generated native folders (EAS builds them)
 /ios
 /android
